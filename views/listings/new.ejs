@@ -1,0 +1,61 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <div class="row">
+    <div class="col-8 offset-2">
+    <br>
+    <h2>Create a new listing</h2>
+    <br>
+    <form method = "POST", action = "/listings" class = "needs-validation" novalidate enctype = "multipart/form-data">
+
+        <div class = "mb-3">
+        <lable for = "title" class = "form-label">Title</lable>
+        <input name = "listing[title]", placeholder="Enter Title" class = "form-control" required>  <!--required is for form validations.-->
+        <div class = "valid-feedback">Looks Good!</div>
+        <div class = "invalid-feedback">Title needed</div>
+        </div>
+        <div class = "mb-3">
+            <lable for = "description" class = "form-label">Description</lable>
+            <textarea name = "listing[description]" class = "form-control" required></textarea>
+            <div class = "valid-feedback">Looks Good!</div>
+            <div class = "invalid-feedback">Description needed</div>
+        </div>
+
+        <!-- <div class = "mb-3">
+            <lable for = "image" class = "form-label">Image Link</lable>
+            <input name = "listing[image]" placeholder=" Paste image URL/Link" class = "form-control">
+        </div> -->
+
+        <div class = "mb-3">
+            <lable for = "image" class = "form-label">Upload Image</lable>
+            <input name = "listing[image]" placeholder=" Paste image URL/Link" class = "form-control" type = "file" required>
+        </div>
+
+        <div class = "mb-3">
+            <lable for = "price" class = "form-label">Price</lable>
+            <input name = "listing[price]"  class = "form-control" placeholder="Enter Price" required>
+            <div class = "valid-feedback">Looks Good!</div>
+            <div class = "invalid-feedback">Price needed</div>
+        </div>
+        <div class="row">
+            <div class = "mb-3 col-md-8">
+                <lable for = "location" class = "form-label">Location</lable>
+                <input name = "listing[location]"  text = "text" class = "form-control" placeholder="Enter Location" required>
+                <div class = "valid-feedback">Looks Good!</div>
+                <div class = "invalid-feedback">Location needed</div>
+            </div>
+
+            <div class = "mb-3 col-md-4">
+                <lable for = "country" class = "form-label">Country</lable>
+                <input name = "listing[country]" text = "text" class = "form-control" placeholder="Enter Country" required>
+                <div class = "valid-feedback">Looks Good!</div>
+                <div class = "invalid-feedback">Country needed</div>
+            </div>
+        </div>
+
+        <button class = "btn btn-outline-danger mt-3">Submit</button>
+        <br>
+        <br>
+    </form>
+    </div>
+    </div>
+</body>

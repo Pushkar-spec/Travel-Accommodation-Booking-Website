@@ -1,0 +1,83 @@
+
+<style>
+  .searchBtn i {
+    display: inline;
+    margin-right: 0.5rem;
+  
+  }
+
+  .searchBtn {
+    border-radius: 25px;
+    padding : 8px 16px
+  }
+
+  /* .searchBar{
+    width : 500px;
+    border-radius: 25px;
+  }
+
+  .searchBar::placeholder {
+    color: #fe424d;
+    font-weight: 400;
+    opacity: 0.8;
+  } */
+
+  .searchBar {
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  width: 400px; /* adjust width */
+  transition: all 0.3s ease;
+
+}
+
+.searchBar:focus {
+  border-color: #dc3545;; /* Airbnb pink */
+  box-shadow: 0 0 5px rgba(75, 0, 14, 0.5);
+  outline: none;
+}
+
+.searchBar::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/listings"><i class="fa-solid fa-compass"></i>
+      <spans style = "color: #dc3545;;" class="fw-bold">WanderLust</span>
+      <!-- <div class = "">WanderLust</div> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        <a class="nav-link explore" href="/listings">Explore</a>
+      </div>
+
+      <div class = "navbar-nav ms-auto">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 searchBar" type="search" placeholder="Search Destinations"/>
+          <button class="btn btn-outline-danger searchBtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+      </div>
+
+
+      <div class="navbar-nav ms-auto">
+                <a class="nav-link me-4 airbnb " href="/listings/new"><b>Airbnb your home</b></a>
+        <% if(!currUser) { %>
+          <div >
+            <a href="/signup" class="btn btn-danger me-3" role="button">Signup</a>
+            <a href="/login" class="btn btn-danger" role="button">Login</a>    
+          </div>
+        <% } %>
+        <% if(currUser) { %>
+        <a href="/logout" class="btn btn-danger" role="button">Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
